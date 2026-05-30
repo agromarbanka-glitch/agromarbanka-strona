@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+<linearGradient id="bg" x1="0" x2="1"><stop stop-color="#102418"/><stop offset=".5" stop-color="#4c5d1c"/><stop offset="1" stop-color="#d6b65d"/></linearGradient>
+<radialGradient id="red" cx=".35" cy=".25" r=".7"><stop stop-color="#ffd2cc"/><stop offset=".45" stop-color="#bc302b"/><stop offset="1" stop-color="#43100e"/></radialGradient>
+<radialGradient id="dark" cx=".35" cy=".25" r=".7"><stop stop-color="#c0a9e1"/><stop offset=".45" stop-color="#271435"/><stop offset="1" stop-color="#090407"/></radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<circle cx="250" cy="410" r="145" fill="url(#red)"/><circle cx="480" cy="330" r="82" fill="url(#red)"/><circle cx="615" cy="455" r="85" fill="url(#dark)"/><circle cx="420" cy="555" r="92" fill="url(#dark)"/><circle cx="705" cy="580" r="70" fill="#5d1424"/>
+<path d="M390 210c120-90 250-56 315 4-125 42-224 39-315-4Z" fill="#d8bd69"/>
+<path d="M330 225c-92-54-170-25-205 34 80 16 142 5 205-34Z" fill="#6f8f4a"/>
+</svg>
