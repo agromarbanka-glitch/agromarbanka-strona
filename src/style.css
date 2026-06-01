@@ -1101,3 +1101,91 @@ button{
   object-fit:contain !important;
 }
 
+
+
+/* =========================================================
+   AGRO-MAR v25 — naprawa galerii + zakładka Galeria
+   ========================================================= */
+
+/* Cofamy czarne tła kafelków z v24 i przywracamy widoczne zdjęcia */
+.galleryItem,
+.galleryCard,
+.photoCard,
+.fruitPhotoCard,
+.imageCard,
+.cardImage,
+.sectionImage,
+.transportPhoto{
+  background:#fff6dc !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+
+/* Obrazki mają się pokazywać normalnie, bez czarnego zasłonięcia */
+.gallery img,
+.galleryCard img,
+.photoCard img,
+.fruitPhotoCard img,
+.imageCard img,
+.cardImage img,
+.sectionImage img,
+.transportPhoto img,
+.cards img{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  width:100% !important;
+  height:330px !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  background:#fff6dc !important;
+}
+
+/* Jeżeli zdjęcie jest pionowe, nadal wypełni kafelek elegancko */
+.galleryItem{
+  min-height:330px !important;
+  background-color:#fff6dc !important;
+}
+
+/* Podpis zostaje elegancki, ale bez zasłaniania zdjęcia */
+.galleryItem h3,
+.galleryCard h3,
+.photoCard h3,
+.fruitPhotoCard h3,
+.cardTitle{
+  position:absolute !important;
+  left:20px !important;
+  bottom:20px !important;
+  z-index:5 !important;
+  background:rgba(255,246,220,.94) !important;
+  color:#0b3024 !important;
+  border:1px solid rgba(216,189,105,.45) !important;
+}
+
+/* Warstwa przyciemnienia tylko delikatna */
+.galleryItem::after,
+.galleryCard::after,
+.photoCard::after,
+.fruitPhotoCard::after{
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(4,30,22,.20)) !important;
+}
+
+/* Menu — dodana Galeria ma taki sam wygląd jak pozostałe */
+.header nav a[href="/#galeria"]{
+  display:inline-flex !important;
+}
+
+@media(max-width:720px){
+  .gallery img,
+  .galleryCard img,
+  .photoCard img,
+  .fruitPhotoCard img,
+  .imageCard img,
+  .cardImage img,
+  .sectionImage img,
+  .transportPhoto img{
+    height:260px !important;
+  }
+}
+
