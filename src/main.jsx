@@ -129,7 +129,22 @@ function Producer({sec}){
 function Processing(){return <section className="section processing"><div className="sectionHead"><p className="label">Przetwórstwo</p><h2>Nowoczesne zaplecze produkcyjne</h2></div><div className="cards"><article><h3>Linia produkcyjna</h3><p>Nowoczesna linia produkcyjna chłodzona za pomocą chillera.</p></article><article><h3>Truskawka</h3><p>Truskawkę płuczemy, pakujemy w beczki i mrozimy.</p></article><article><h3>Malina i porzeczka</h3><p>Malinę oraz porzeczkę przerabiamy na pulpę owocową.</p></article></div></section>}
 function Transport({sec,directions,settings}){return <section id={sec.slug} className="transportSection"><div className="transportImage" style={{backgroundImage:`linear-gradient(90deg,rgba(4,30,22,.04),rgba(4,30,22,.2)),url('${settings.hero_truck_image}')`}}></div><div className="transportCopy"><p className="label goldLabel">{sec.menu_label}</p><h2>{sec.title}</h2><Text body={sec.body}/><div className="flags">{directions.map(d=><span key={d.name}><b>{d.flag}</b>{d.name}</span>)}</div></div></section>}
 function Certificates(){return <section className="certificates"><img src="/images/logo-jablko.png" alt=""/><p className="label goldLabel">Jakość i bezpieczeństwo</p><h2>HACCP / IFS FOOD</h2><p>Pracujemy zgodnie ze standardami jakości i bezpieczeństwa żywności.</p></section>}
-function Gallery({gallery}){return <section id="galeria" className="section gallery"><div className="sectionHead"><p className="label">Galeria</p><h2>Zdjęcia firmy, produkcji, punktów skupu i floty</h2></div><div className="galleryGrid">{gallery.map(g=><div className="galleryItem" key={g.title} style={{backgroundImage:`linear-gradient(180deg,transparent,rgba(4,30,22,.38)),url('${g.image_url}')`}}><span>{g.title}</span></div>)}</div></section>}
+function Gallery({gallery}){
+ return <section id="galeria" className="section gallery">
+  <div className="sectionHead">
+   <p className="label">Galeria</p>
+   <h2>Zdjęcia firmy, produkcji, punktów skupu i floty</h2>
+  </div>
+  <div className="galleryGrid">
+   {gallery.map(g=>
+    <figure className="galleryItem" key={(g.id||g.title)+g.image_url}>
+     <img src={g.image_url} alt={g.title||"Zdjęcie AGRO-MAR"} loading="lazy" onError={e=>{e.currentTarget.style.display="none";}}/>
+     {g.title && g.title.trim() !== "." && g.title.trim() !== "-" && <figcaption>{g.title}</figcaption>}
+    </figure>
+   )}
+  </div>
+ </section>
+}
 function Contact({sec,settings}){
  return <section id={sec.slug} className="section contact contactReadable">
   <div className="sectionHead contactHead">

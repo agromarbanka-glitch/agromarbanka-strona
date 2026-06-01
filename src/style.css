@@ -1189,3 +1189,118 @@ button{
   }
 }
 
+
+
+/* =========================================================
+   AGRO-MAR v26 — definitywna naprawa galerii
+   Zdjęcia są zwykłymi IMG, bez background-image i bez czarnego tła.
+   ========================================================= */
+
+.gallery{
+  background:linear-gradient(180deg,#fff6df 0%,#f3e6c9 100%) !important;
+}
+
+.galleryGrid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:28px !important;
+  align-items:start !important;
+}
+
+.galleryItem{
+  position:relative !important;
+  margin:0 !important;
+  padding:0 !important;
+  min-height:0 !important;
+  height:auto !important;
+  overflow:hidden !important;
+  border-radius:30px !important;
+  background:#fff6df !important;
+  border:1px solid rgba(189,148,49,.28) !important;
+  box-shadow:0 22px 60px rgba(4,30,22,.14) !important;
+}
+
+.galleryItem::after{
+  content:none !important;
+  display:none !important;
+}
+
+.galleryItem img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  min-height:0 !important;
+  object-fit:unset !important;
+  object-position:center !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  background:#fff6df !important;
+}
+
+.galleryItem figcaption,
+.galleryItem span,
+.galleryItem h3{
+  position:absolute !important;
+  left:18px !important;
+  bottom:18px !important;
+  z-index:5 !important;
+  margin:0 !important;
+  padding:9px 16px !important;
+  border-radius:999px !important;
+  background:rgba(255,246,220,.94) !important;
+  color:#0b3024 !important;
+  border:1px solid rgba(189,148,49,.35) !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.16) !important;
+}
+
+/* Usunięcie pozostałości po poprzednim sposobie tła */
+.galleryItem[style]{
+  background-image:none !important;
+}
+
+@media(max-width:1100px){
+  .galleryGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:720px){
+  .galleryGrid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* Admin — przyciski czytelniejsze */
+.admin button,
+.adminPage button,
+.adminPanel button{
+  border:none !important;
+  border-radius:999px !important;
+  padding:13px 22px !important;
+  font-weight:900 !important;
+  cursor:pointer !important;
+  background:#0b3024 !important;
+  color:#fff3c1 !important;
+}
+
+.admin button:nth-of-type(2),
+.adminPage button:nth-of-type(2),
+.adminPanel button:nth-of-type(2){
+  background:#a72b2b !important;
+  color:white !important;
+}
+
+.admin input,
+.admin textarea,
+.admin select{
+  background:#fffaf0 !important;
+  color:#10271f !important;
+  border:1px solid rgba(11,48,36,.24) !important;
+  border-radius:14px !important;
+  padding:12px 14px !important;
+  font-weight:700 !important;
+}
+
