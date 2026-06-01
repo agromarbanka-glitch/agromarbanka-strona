@@ -1,0 +1,867 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bottle:#0b3024;--gold:#d8bd69;--gold2:#fff1a8;--gold3:#a9802f;--cream:#f5efe3;--paper:#fffaf0;--text:#14221c;--muted:#68726c;--line:rgba(216,189,105,.34);--shadow:0 34px 100px rgba(4,30,22,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--text)}a{text-decoration:none;color:inherit}
+.header{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px clamp(18px,5vw,72px);background:rgba(4,30,22,.96);color:white;border-bottom:1px solid rgba(216,189,105,.25);backdrop-filter:blur(18px)}
+.brand{display:flex;align-items:center;gap:13px}.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:1px solid rgba(216,189,105,.55)}.brand strong{display:block;font-size:17px}.brand small{display:block;font-size:12px;color:#d6cda9;margin-top:3px}nav{display:flex;align-items:center;gap:15px;font-size:13px;font-weight:700;flex-wrap:wrap}nav a{color:#efe6c9}.adminLink{opacity:.55}
+.hero{position:relative;min-height:620px;display:grid;place-items:center;overflow:hidden;color:white;background:linear-gradient(135deg,var(--theme-hero-a,#0b3024),var(--theme-hero-b,#123f30))}
+.heroImage{position:absolute;top:0;bottom:0;width:54%;background-size:cover;background-position:center}.fruitHero{left:0}.truckHero{right:0}.heroOverlay{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(4,30,22,.02),var(--theme-overlay-mid,rgba(11,48,36,.42)) 56%,var(--theme-overlay-dark,rgba(11,48,36,.72))),linear-gradient(180deg,rgba(4,30,22,.08),rgba(11,48,36,.45))}
+.heroContent{position:relative;z-index:2;text-align:center;max-width:860px;padding:40px 18px}.heroLogo img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid rgba(216,189,105,.48);box-shadow:0 14px 55px rgba(216,189,105,.18)}
+.heroContent h1{margin:8px 0 0;font-family:"Cormorant Garamond",serif;font-size:clamp(52px,7vw,96px);line-height:.86;background:linear-gradient(110deg,#9f762a 0%,#fff6b8 20%,#d8bd69 38%,#fff1a8 55%,#b98d32 76%,#fff7c6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 2px rgba(0,0,0,.38))}
+.company{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3vw,38px);color:var(--gold2);margin:10px 0}.goldOrnament,.lineOrnament{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:16px auto}.goldOrnament span,.lineOrnament span{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.heroContent h2{font-family:"Cormorant Garamond",serif;text-transform:uppercase;font-size:clamp(38px,5vw,62px);line-height:1.08;margin:22px 0 18px;color:#fff;letter-spacing:.045em;text-shadow:0 5px 24px rgba(0,0,0,.48)}.lead{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,2vw,24px);line-height:1.45;color:#fff8df;max-width:760px;margin:0 auto}
+.fruitStrip{background:var(--bottle);color:white;display:grid;grid-template-columns:.65fr 1.35fr;gap:28px;padding:34px clamp(18px,5vw,72px);align-items:center;border-top:1px solid rgba(216,189,105,.35);border-bottom:1px solid rgba(216,189,105,.35)}.label{margin:0 0 10px;color:var(--gold3);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:900}.goldLabel{color:var(--gold2)}.fruitStrip h2{color:#fff3c1;margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(28px,3.5vw,42px)}.fruitPills{display:flex;flex-wrap:wrap;gap:10px}.fruitPills span{border:1px solid rgba(216,189,105,.4);color:#fff7dc;border-radius:999px;padding:9px 12px;font-weight:800;background:rgba(255,255,255,.045)}
+.section{padding:70px clamp(18px,5vw,72px)}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}.sectionTitle h2,.sectionHead h2,.fruitText h2,.transportCopy h2,.certificates h2{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,4vw,50px);line-height:1;margin:0 0 18px;color:var(--bottle)}.textCard,.contactCard{background:white;border:1px solid var(--line);border-radius:30px;padding:32px;box-shadow:0 24px 70px rgba(4,30,22,.08)}.textCard p,.fruitText p,.transportCopy p,.cards p,.certificates p,.contactCard p{color:var(--muted);line-height:1.8;font-weight:600}
+.fruitSection{display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;padding:64px clamp(18px,5vw,72px);background:var(--paper);align-items:center}.fruitGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 22px}.fruitItem{text-align:center;color:var(--bottle)}.fruitCircle{width:138px;height:138px;border-radius:50%;padding:6px;margin:0 auto 12px;border:2px solid rgba(216,189,105,.78);background:#fff;box-shadow:0 18px 50px rgba(4,30,22,.09);overflow:hidden}.fruitCircle img{width:100%;height:100%;object-fit:cover;border-radius:50%}.fruitItem strong{display:block;font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.05;text-transform:capitalize}
+.processing{background:#fff}.sectionHead{text-align:center;max-width:900px;margin:0 auto 34px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cards article{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:26px}.cards h3{font-family:"Cormorant Garamond",serif;font-size:29px;color:var(--bottle);margin:0 0 12px}
+.transportSection{display:grid;grid-template-columns:1fr 1fr;background:var(--bottle);color:white}.transportImage{min-height:420px;background-size:cover;background-position:center}.transportCopy{padding:58px clamp(18px,5vw,62px)}.transportCopy h2{color:#fff3c1}.transportCopy p{color:#e7ddc5}.flags{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.flags span{border:1px solid rgba(216,189,105,.55);border-radius:18px;padding:16px 10px;text-align:center;color:#fff3c1;font-weight:900}.flags b{display:block;font-size:30px;margin-bottom:8px}
+.certificates{text-align:center;padding:70px clamp(18px,5vw,72px);background:linear-gradient(135deg,var(--bottle),#021710);color:white}.certificates img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid rgba(216,189,105,.5);margin-bottom:16px}.certificates h2{color:#fff3c1}.certificates p{color:#e7ddc5;max-width:760px;margin:0 auto}
+.gallery{background:var(--paper)}.galleryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.galleryItem{min-height:240px;border-radius:28px;border:1px solid var(--line);background-size:cover;background-position:center;display:grid;place-items:end start;padding:24px;overflow:hidden}.galleryItem span{background:rgba(255,255,255,.92);color:var(--bottle);border-radius:999px;padding:10px 14px;font-weight:900}.contact{background:var(--cream)}.contactCard{display:grid;gap:18px}.contactCard a,.contactCard span{color:var(--bottle);font-size:20px;font-weight:900}footer{background:#021710;color:#e7ddc5;padding:26px clamp(18px,5vw,72px);display:flex;justify-content:space-between;gap:18px}footer strong{color:var(--gold2)}footer span{color:#cfc5a6}
+.adminPage{min-height:100vh;background:#f5efe3;color:#14221c;font-family:Inter,system-ui,sans-serif;padding:24px}.adminLogin{max-width:520px;margin:80px auto;background:white;border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:var(--shadow)}.adminLogin input,.adminLogin button,.adminBox input,.adminBox textarea,.adminBox button{font:inherit}.adminLogin input{width:100%;padding:14px;border:1px solid #ddd;border-radius:14px;margin:12px 0}.adminLogin button,.adminBox button,.adminHeader button,.adminHeader a{border:0;border-radius:999px;background:var(--bottle);color:var(--gold2);padding:12px 18px;font-weight:800;text-decoration:none;cursor:pointer}.adminHeader{display:flex;justify-content:space-between;gap:16px;align-items:center;max-width:1200px;margin:0 auto 22px}.adminHeader h1{font-family:"Cormorant Garamond",serif;color:var(--bottle);font-size:46px;margin:0}.adminHeader div{display:flex;gap:10px;flex-wrap:wrap}.adminBox{max-width:1200px;margin:18px auto;background:white;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 18px 50px rgba(4,30,22,.08)}.adminBox h2{font-family:"Cormorant Garamond",serif;color:var(--bottle);font-size:34px;margin:0 0 18px}.adminGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.adminRow{border-top:1px solid rgba(0,0,0,.08);padding:16px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.adminBox label{display:grid;gap:6px;font-size:12px;font-weight:800;color:#536058;text-transform:uppercase;letter-spacing:.06em}.adminBox textarea{width:100%;min-height:46px;border:1px solid #ddd;border-radius:12px;padding:10px;resize:vertical;background:#fffdf7}.adminBox input[type="checkbox"]{width:24px;height:24px}.adminActions{display:flex;gap:10px;align-items:end}.adminActions .danger{background:#8d1d1d;color:#fff}
+@media(max-width:1080px){.fruitStrip,.fruitSection,.transportSection,.split{grid-template-columns:1fr}.cards,.galleryGrid{grid-template-columns:1fr 1fr}.fruitGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.header{position:static;flex-direction:column;align-items:flex-start}nav{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}nav a{border:1px solid rgba(216,189,105,.25);border-radius:14px;text-align:center;padding:12px;background:rgba(255,255,255,.06)}.hero{min-height:720px}.heroImage{width:100%;height:50%;opacity:.65}.fruitHero{top:0;bottom:auto}.truckHero{top:50%;bottom:auto}.section,.fruitSection,.transportCopy,.fruitStrip{padding:50px 18px}.cards,.galleryGrid,.fruitGrid,.flags{grid-template-columns:1fr}.adminGrid,.adminRow{grid-template-columns:1fr}.adminHeader{align-items:flex-start;flex-direction:column}footer{flex-direction:column}}
+
+.producerSection{
+  padding:70px clamp(18px,5vw,72px);
+  background:
+    linear-gradient(135deg,rgba(11,48,36,.94),rgba(18,63,48,.9)),
+    url('/images/jablka.jpg');
+  background-size:cover;
+  background-position:center;
+  color:white;
+}
+.producerCard{
+  max-width:1040px;
+  margin:0 auto;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(216,189,105,.34);
+  border-radius:34px;
+  padding:42px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 34px 100px rgba(4,30,22,.22);
+}
+.producerCard h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(34px,4.4vw,58px);
+  line-height:1;
+  margin:0 0 18px;
+  color:#fff3c1;
+}
+.producerCard p{
+  color:#efe4c7;
+  line-height:1.85;
+  font-weight:600;
+}
+.producerBenefits{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:26px;
+}
+.producerBenefits span{
+  border:1px solid rgba(216,189,105,.44);
+  border-radius:18px;
+  padding:14px 12px;
+  color:#fff3c1;
+  font-weight:900;
+  text-align:center;
+  background:rgba(255,255,255,.045);
+}
+@media(max-width:900px){.producerBenefits{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.producerBenefits{grid-template-columns:1fr}.producerCard{padding:26px}}
+
+
+/* MOTYWY STRONY — do wyboru w panelu /admin w polu theme:
+   bottle = butelkowa zieleń
+   light = jasny kremowy
+   lightgreen = jasna stonowana zieleń
+   goldcream = kremowo-złoty premium
+*/
+
+.theme-bottle{
+  --theme-hero-a:#0b3024;
+  --theme-hero-b:#123f30;
+  --theme-overlay-mid:rgba(11,48,36,.42);
+  --theme-overlay-dark:rgba(11,48,36,.72);
+  --theme-section-bg:#f5efe3;
+  --theme-paper:#fffaf0;
+}
+
+.theme-light{
+  --theme-hero-a:#eef2e4;
+  --theme-hero-b:#f8f3e8;
+  --theme-overlay-mid:rgba(245,239,227,.42);
+  --theme-overlay-dark:rgba(245,239,227,.70);
+  --theme-section-bg:#f8f3e8;
+  --theme-paper:#ffffff;
+}
+
+.theme-lightgreen{
+  --theme-hero-a:#cfdcc4;
+  --theme-hero-b:#eef4e6;
+  --theme-overlay-mid:rgba(207,220,196,.36);
+  --theme-overlay-dark:rgba(207,220,196,.66);
+  --theme-section-bg:#eef4e6;
+  --theme-paper:#fbfff5;
+}
+
+.theme-goldcream{
+  --theme-hero-a:#e5d6a8;
+  --theme-hero-b:#fff7df;
+  --theme-overlay-mid:rgba(229,214,168,.38);
+  --theme-overlay-dark:rgba(229,214,168,.68);
+  --theme-section-bg:#f7efd8;
+  --theme-paper:#fffaf0;
+}
+
+.theme-light .heroContent h2,
+.theme-lightgreen .heroContent h2,
+.theme-goldcream .heroContent h2{
+  color:#123f30;
+  text-shadow:0 3px 16px rgba(255,255,255,.7);
+}
+
+.theme-light .lead,
+.theme-lightgreen .lead,
+.theme-goldcream .lead{
+  color:#123f30;
+}
+
+.theme-light .company,
+.theme-lightgreen .company,
+.theme-goldcream .company{
+  color:#7b5b18;
+}
+
+.theme-light .heroOverlay,
+.theme-lightgreen .heroOverlay,
+.theme-goldcream .heroOverlay{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.1),var(--theme-overlay-mid) 56%,var(--theme-overlay-dark)),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.18));
+}
+
+.theme-bottle .hero,
+.theme-light .hero,
+.theme-lightgreen .hero,
+.theme-goldcream .hero{
+  background:linear-gradient(135deg,var(--theme-hero-a),var(--theme-hero-b));
+}
+
+.theme-bottle,
+.theme-light,
+.theme-lightgreen,
+.theme-goldcream{
+  background:var(--theme-section-bg);
+}
+
+.theme-light .fruitStrip,
+.theme-lightgreen .fruitStrip,
+.theme-goldcream .fruitStrip{
+  background:#123f30;
+}
+
+.theme-light .fruitSection,
+.theme-lightgreen .fruitSection,
+.theme-goldcream .fruitSection,
+.theme-light .gallery,
+.theme-lightgreen .gallery,
+.theme-goldcream .gallery{
+  background:var(--theme-paper);
+}
+
+.theme-light .producerSection,
+.theme-lightgreen .producerSection,
+.theme-goldcream .producerSection{
+  background:
+    linear-gradient(135deg,rgba(18,63,48,.84),rgba(37,87,65,.72)),
+    url('/images/jablka.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+
+/* v15 — WYRAŹNIE POPRAWIONE MOTYWY */
+.hero{
+  background:linear-gradient(135deg,var(--hero-bg-1),var(--hero-bg-2)) !important;
+}
+.heroOverlay{
+  background:
+    radial-gradient(circle at 50% 42%, var(--hero-center), var(--hero-mid) 54%, var(--hero-edge) 100%),
+    linear-gradient(180deg, var(--hero-top), var(--hero-bottom)) !important;
+}
+.fruitHero{
+  background-image:linear-gradient(90deg,var(--photo-left),var(--photo-right)),url('/images/owoce-mix.jpg') !important;
+}
+.truckHero{
+  background-image:linear-gradient(90deg,var(--photo-right),var(--photo-left)),url('/images/samochod.jpg') !important;
+}
+
+/* BUTELKOWA ZIELEŃ */
+.theme-bottle{
+  --hero-bg-1:#0c3528;
+  --hero-bg-2:#18543e;
+  --hero-center:rgba(20,80,58,.08);
+  --hero-mid:rgba(11,48,36,.35);
+  --hero-edge:rgba(7,32,24,.68);
+  --hero-top:rgba(11,48,36,.04);
+  --hero-bottom:rgba(7,32,24,.35);
+  --photo-left:rgba(8,39,29,.05);
+  --photo-right:rgba(8,39,29,.48);
+}
+
+/* JASNY KREMOWY */
+.theme-light{
+  --hero-bg-1:#f6eedc;
+  --hero-bg-2:#fff9ea;
+  --hero-center:rgba(255,250,235,.18);
+  --hero-mid:rgba(246,238,220,.30);
+  --hero-edge:rgba(218,198,144,.42);
+  --hero-top:rgba(255,255,255,.12);
+  --hero-bottom:rgba(246,238,220,.26);
+  --photo-left:rgba(255,250,235,.10);
+  --photo-right:rgba(246,238,220,.28);
+}
+
+/* JASNA ZIELEŃ PREMIUM */
+.theme-lightgreen{
+  --hero-bg-1:#7d9b55;
+  --hero-bg-2:#c2d69a;
+  --hero-center:rgba(194,214,154,.10);
+  --hero-mid:rgba(113,145,75,.26);
+  --hero-edge:rgba(55,91,42,.50);
+  --hero-top:rgba(194,214,154,.08);
+  --hero-bottom:rgba(79,119,55,.28);
+  --photo-left:rgba(109,151,75,.03);
+  --photo-right:rgba(72,111,52,.32);
+}
+
+/* KREMOWO-ZŁOTY */
+.theme-goldcream{
+  --hero-bg-1:#d7bd72;
+  --hero-bg-2:#fff2c4;
+  --hero-center:rgba(255,242,196,.12);
+  --hero-mid:rgba(215,189,114,.28);
+  --hero-edge:rgba(126,88,28,.45);
+  --hero-top:rgba(255,245,214,.10);
+  --hero-bottom:rgba(190,151,67,.24);
+  --photo-left:rgba(255,245,214,.08);
+  --photo-right:rgba(190,151,67,.26);
+}
+
+.theme-light .heroContent h2,
+.theme-lightgreen .heroContent h2,
+.theme-goldcream .heroContent h2{
+  color:#103426 !important;
+  text-shadow:0 2px 12px rgba(255,255,255,.75) !important;
+}
+.theme-light .lead,
+.theme-lightgreen .lead,
+.theme-goldcream .lead{
+  color:#153a2c !important;
+  text-shadow:0 1px 8px rgba(255,255,255,.55) !important;
+}
+.theme-light .company,
+.theme-lightgreen .company,
+.theme-goldcream .company{
+  color:#8c651d !important;
+}
+.theme-light .fruitStrip{background:#174532 !important;}
+.theme-lightgreen .fruitStrip{background:#315f2d !important;}
+.theme-goldcream .fruitStrip{background:#5a4218 !important;}
+.theme-light .fruitSection,.theme-light .gallery,.theme-light .section{background:#fffaf0 !important;}
+.theme-lightgreen .fruitSection,.theme-lightgreen .gallery,.theme-lightgreen .section{background:#eef4df !important;}
+.theme-goldcream .fruitSection,.theme-goldcream .gallery,.theme-goldcream .section{background:#fff8e6 !important;}
+
+
+/* =========================================================
+   AGRO-MAR v17 — TŁA BEZ WYBLAKNIĘCIA
+   Zmiana z panelu admina:
+   theme: bottle / white / lightgreen / orchard / goldcream
+   hero_background: bottle / white / lightgreen / orchard
+   ========================================================= */
+
+/* Nigdy nie rozjaśniamy zdjęć do "mlecznej mgły" */
+.hero{
+  background:var(--hero-solid-bg,#0d392b) !important;
+}
+
+/* Nakładka jest delikatna, tylko dla czytelności tekstu */
+.heroOverlay{
+  background:
+    linear-gradient(90deg,var(--side-left,rgba(255,255,255,0)) 0%,var(--center-bg,rgba(255,255,255,.08)) 45%,var(--side-right,rgba(255,255,255,0)) 100%),
+    linear-gradient(180deg,var(--top-bg,rgba(255,255,255,0)) 0%,var(--bottom-bg,rgba(0,0,0,.08)) 100%) !important;
+}
+
+/* Przywrócenie zdjęć bez narzucania mlecznej bieli */
+.fruitHero{
+  background-size:cover !important;
+  background-position:center !important;
+}
+.truckHero{
+  background-size:cover !important;
+  background-position:center !important;
+}
+
+/* BAZOWE MOTYWY */
+.theme-bottle{
+  --page-bg:#f5efe3;
+  --card-bg:#fffaf0;
+  --strip-bg:#092a20;
+  --text-main:#14221c;
+  --text-hero:#ffffff;
+  --sub-hero:#fff3c1;
+  --gold-main:#d8bd69;
+}
+
+.theme-white,
+.theme-light{
+  --page-bg:#ffffff;
+  --card-bg:#ffffff;
+  --strip-bg:#174532;
+  --text-main:#14221c;
+  --text-hero:#103426;
+  --sub-hero:#7d5b18;
+  --gold-main:#c69218;
+}
+
+.theme-lightgreen{
+  --page-bg:#eef5df;
+  --card-bg:#f8fbf0;
+  --strip-bg:#315f2d;
+  --text-main:#123426;
+  --text-hero:#123426;
+  --sub-hero:#6b7e2c;
+  --gold-main:#b98a18;
+}
+
+.theme-orchard{
+  --page-bg:#eaf2d8;
+  --card-bg:#f6faec;
+  --strip-bg:#244d22;
+  --text-main:#113322;
+  --text-hero:#123426;
+  --sub-hero:#5b6f24;
+  --gold-main:#b98a18;
+}
+
+.theme-goldcream{
+  --page-bg:#f4e6c2;
+  --card-bg:#fff8e6;
+  --strip-bg:#5a4218;
+  --text-main:#211b12;
+  --text-hero:#2a2418;
+  --sub-hero:#8a6116;
+  --gold-main:#c69218;
+}
+
+/* OSOBNY WYBÓR TŁA HERO */
+.bg-bottle{
+  --hero-solid-bg:linear-gradient(135deg,#0d392b,#185b42);
+  --center-bg:rgba(10,40,30,.18);
+  --side-left:rgba(7,29,22,.08);
+  --side-right:rgba(7,29,22,.10);
+  --top-bg:rgba(0,0,0,.04);
+  --bottom-bg:rgba(0,0,0,.18);
+  --text-hero:#ffffff;
+  --sub-hero:#fff3c1;
+}
+
+.bg-white{
+  --hero-solid-bg:#ffffff;
+  --center-bg:rgba(255,255,255,.18);
+  --side-left:rgba(255,255,255,.05);
+  --side-right:rgba(255,255,255,.05);
+  --top-bg:rgba(255,255,255,.04);
+  --bottom-bg:rgba(255,255,255,.04);
+  --text-hero:#103426;
+  --sub-hero:#8a6116;
+}
+
+.bg-lightgreen{
+  --hero-solid-bg:linear-gradient(135deg,#e4f0d3,#f8fbef);
+  --center-bg:rgba(235,246,218,.16);
+  --side-left:rgba(228,240,211,.05);
+  --side-right:rgba(228,240,211,.05);
+  --top-bg:rgba(255,255,255,.03);
+  --bottom-bg:rgba(220,236,200,.10);
+  --text-hero:#123426;
+  --sub-hero:#6b7e2c;
+}
+
+.bg-orchard{
+  --hero-solid-bg:linear-gradient(135deg,#c6dc9b,#eef6dc);
+  --center-bg:rgba(200,222,155,.14);
+  --side-left:rgba(198,220,155,.04);
+  --side-right:rgba(198,220,155,.04);
+  --top-bg:rgba(255,255,255,.02);
+  --bottom-bg:rgba(96,135,59,.12);
+  --text-hero:#123426;
+  --sub-hero:#5b6f24;
+}
+
+/* Kolor tekstów w hero */
+.heroContent h2{
+  color:var(--text-hero,#ffffff) !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.20) !important;
+}
+.bg-white .heroContent h2,
+.bg-lightgreen .heroContent h2,
+.bg-orchard .heroContent h2{
+  text-shadow:0 2px 10px rgba(255,255,255,.75) !important;
+}
+.lead{
+  color:var(--text-hero,#ffffff) !important;
+  text-shadow:0 1px 8px rgba(0,0,0,.18) !important;
+}
+.bg-white .lead,
+.bg-lightgreen .lead,
+.bg-orchard .lead{
+  text-shadow:0 1px 8px rgba(255,255,255,.72) !important;
+}
+.company{
+  color:var(--sub-hero,#fff3c1) !important;
+}
+
+/* Sekcje strony */
+body,
+.theme-bottle,
+.theme-white,
+.theme-light,
+.theme-lightgreen,
+.theme-orchard,
+.theme-goldcream{
+  background:var(--page-bg,#f5efe3) !important;
+}
+.section,
+.fruitSection,
+.gallery,
+.contact{
+  background:var(--page-bg,#f5efe3) !important;
+}
+.textCard,
+.contactCard,
+.cards article,
+.fruitPhotoCard{
+  background:var(--card-bg,#fffaf0) !important;
+}
+.fruitStrip{
+  background:var(--strip-bg,#092a20) !important;
+}
+.sectionTitle h2,
+.sectionHead h2,
+.fruitText h2,
+.contactCard a,
+.contactCard span{
+  color:var(--text-main,#14221c) !important;
+}
+
+/* Przycisk główny */
+.darkButton,
+.adminLogin button,
+.adminBox button,
+.adminHeader button,
+.adminHeader a{
+  background:var(--strip-bg,#092a20) !important;
+  color:#fff3c1 !important;
+}
+
+/* Pole admina: ma być czytelne */
+.adminPage{
+  background:var(--page-bg,#f5efe3) !important;
+}
+
+
+/* =========================================================
+   AGRO-MAR v18 — PROSTE MOTYWY, JEDNO POLE: theme
+   W /admin używaj tylko:
+   bottle / white / lightgreen / orchard
+   ========================================================= */
+
+/* reset wcześniejszych pomysłów z hero_background */
+.theme-bottle,
+.theme-white,
+.theme-light,
+.theme-lightgreen,
+.theme-orchard,
+.theme-goldcream{
+  --hero-overlay-left: rgba(0,0,0,0);
+  --hero-overlay-center: rgba(0,0,0,.12);
+  --hero-overlay-right: rgba(0,0,0,0);
+  --hero-overlay-bottom: rgba(0,0,0,.18);
+}
+
+/* Wspólne ustawienie hero — zdjęcia zostają ostre */
+.hero{
+  background: var(--page-bg) !important;
+}
+
+.heroOverlay{
+  background:
+    linear-gradient(90deg,
+      var(--hero-overlay-left) 0%,
+      var(--hero-overlay-center) 48%,
+      var(--hero-overlay-right) 100%
+    ),
+    linear-gradient(180deg, transparent 0%, var(--hero-overlay-bottom) 100%) !important;
+}
+
+/* zdjęcia w hero bez mlecznej warstwy */
+.fruitHero,
+.truckHero{
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* 1. Obecne tło — butelkowa zieleń */
+.theme-bottle{
+  --page-bg: #0b3024;
+  --section-bg: #f5efe3;
+  --card-bg: #fffaf0;
+  --strip-bg: #092a20;
+  --headline: #ffffff;
+  --lead: #fff8df;
+  --company: #fff3c1;
+  --normal-text: #14221c;
+  --hero-overlay-left: rgba(5,28,21,.06);
+  --hero-overlay-center: rgba(5,28,21,.34);
+  --hero-overlay-right: rgba(5,28,21,.06);
+  --hero-overlay-bottom: rgba(5,28,21,.34);
+}
+
+/* 2. Białe tło */
+.theme-white,
+.theme-light{
+  --page-bg: #ffffff;
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --strip-bg: #174532;
+  --headline: #123426;
+  --lead: #123426;
+  --company: #8a6116;
+  --normal-text: #14221c;
+  --hero-overlay-left: rgba(255,255,255,.10);
+  --hero-overlay-center: rgba(255,255,255,.34);
+  --hero-overlay-right: rgba(255,255,255,.10);
+  --hero-overlay-bottom: rgba(255,255,255,.18);
+}
+
+/* 3. Jasna zieleń — wyraźna, nie wyblakła */
+.theme-lightgreen{
+  --page-bg: #e4f0d3;
+  --section-bg: #eef6df;
+  --card-bg: #fbfff3;
+  --strip-bg: #315f2d;
+  --headline: #123426;
+  --lead: #123426;
+  --company: #6b7e2c;
+  --normal-text: #123426;
+  --hero-overlay-left: rgba(228,240,211,.08);
+  --hero-overlay-center: rgba(228,240,211,.28);
+  --hero-overlay-right: rgba(228,240,211,.08);
+  --hero-overlay-bottom: rgba(210,230,184,.18);
+}
+
+/* 4. Zieleń sadu — trochę mocniejsza od lightgreen */
+.theme-orchard{
+  --page-bg: #c6dc9b;
+  --section-bg: #eaf2d8;
+  --card-bg: #f8fbef;
+  --strip-bg: #244d22;
+  --headline: #103426;
+  --lead: #103426;
+  --company: #5b6f24;
+  --normal-text: #103426;
+  --hero-overlay-left: rgba(198,220,155,.06);
+  --hero-overlay-center: rgba(198,220,155,.24);
+  --hero-overlay-right: rgba(198,220,155,.06);
+  --hero-overlay-bottom: rgba(112,145,75,.18);
+}
+
+/* Zastosowanie kolorów */
+body,
+main{
+  background: var(--page-bg) !important;
+}
+
+.section,
+.fruitSection,
+.gallery,
+.contact{
+  background: var(--section-bg) !important;
+}
+
+.textCard,
+.contactCard,
+.cards article,
+.fruitPhotoCard,
+.adminBox,
+.adminLogin{
+  background: var(--card-bg) !important;
+}
+
+.fruitStrip{
+  background: var(--strip-bg) !important;
+}
+
+.heroContent h2{
+  color: var(--headline) !important;
+}
+
+.lead{
+  color: var(--lead) !important;
+}
+
+.company{
+  color: var(--company) !important;
+}
+
+.sectionTitle h2,
+.sectionHead h2,
+.fruitText h2,
+.contactCard a,
+.contactCard span,
+.textCard p,
+.fruitText p,
+.cards p,
+.contactCard p{
+  color: var(--normal-text) !important;
+}
+
+/* Czytelność na jasnych motywach */
+.theme-white .heroContent h2,
+.theme-light .heroContent h2,
+.theme-lightgreen .heroContent h2,
+.theme-orchard .heroContent h2{
+  text-shadow: 0 2px 10px rgba(255,255,255,.70) !important;
+}
+
+.theme-white .lead,
+.theme-light .lead,
+.theme-lightgreen .lead,
+.theme-orchard .lead{
+  text-shadow: 0 1px 8px rgba(255,255,255,.65) !important;
+}
+
+/* Czytelność na ciemnym motywie */
+.theme-bottle .heroContent h2,
+.theme-bottle .lead{
+  text-shadow: 0 4px 18px rgba(0,0,0,.45) !important;
+}
+
+/* Admin */
+.adminPage{
+  background: var(--section-bg) !important;
+}
+
+.darkButton,
+.adminLogin button,
+.adminBox button,
+.adminHeader button,
+.adminHeader a{
+  background: var(--strip-bg) !important;
+  color: #fff3c1 !important;
+}
+
+
+
+/* AGRO-MAR v19 — większe menu i czytelny kontakt */
+nav{
+  font-size:15px !important;
+  font-weight:800 !important;
+  letter-spacing:.035em !important;
+  text-transform:uppercase !important;
+}
+nav a{
+  padding:8px 4px;
+}
+
+/* Czytelna sekcja kontaktu */
+.contactReadable{
+  padding-top:76px !important;
+}
+
+.contactHead{
+  max-width:920px;
+  margin:0 auto 34px;
+  text-align:center;
+}
+
+.contactHead p:not(.label){
+  color:var(--muted);
+  font-weight:600;
+  line-height:1.7;
+}
+
+.contactGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.contactInfoBox{
+  background:var(--card-bg,#fffaf0);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:26px;
+  box-shadow:0 18px 55px rgba(4,30,22,.08);
+  min-height:190px;
+}
+
+.contactInfoBox h3{
+  margin:0 0 16px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  line-height:1.05;
+  color:var(--bottle);
+}
+
+.contactInfoBox p{
+  margin:10px 0;
+  color:#344239;
+  line-height:1.65;
+  font-weight:600;
+}
+
+.contactInfoBox a{
+  display:block;
+  color:var(--bottle);
+  font-weight:900;
+  font-size:21px;
+  margin:10px 0;
+  line-height:1.25;
+}
+
+.highlightContact{
+  border:2px solid rgba(216,189,105,.72);
+  background:linear-gradient(135deg,#fffaf0,#fff5d8);
+}
+
+.highlightContact a{
+  font-size:30px;
+  color:#8a6116;
+}
+
+.mainAddress{
+  background:#ffffff;
+}
+
+.wideContact{
+  grid-column:span 4;
+  min-height:auto;
+}
+
+.wideContact p{
+  display:inline-block;
+  margin-right:24px;
+}
+
+@media(max-width:1100px){
+  nav{font-size:13px !important;}
+  .contactGrid{grid-template-columns:repeat(2,1fr);}
+  .wideContact{grid-column:span 2;}
+}
+
+@media(max-width:680px){
+  nav{font-size:12px !important;}
+  .contactGrid{grid-template-columns:1fr;}
+  .wideContact{grid-column:span 1;}
+  .wideContact p{display:block;margin-right:0;}
+  .contactInfoBox{padding:22px;}
+  .highlightContact a{font-size:26px;}
+}
+
+
+/* AGRO-MAR v20 */
+nav a{
+  font-size:16px !important;
+  font-weight:900 !important;
+  letter-spacing:.05em !important;
+  text-transform:uppercase !important;
+}
+
+.contactGrid{
+  gap:26px !important;
+  margin-top:34px !important;
+}
+
+.contactInfoBox{
+  padding:34px !important;
+  border-radius:30px !important;
+}
+
+.contactInfoBox h3{
+  margin-bottom:22px !important;
+  font-size:30px !important;
+}
+
+.contactInfoBox a{
+  margin:16px 0 !important;
+  font-size:22px !important;
+}
+
+.contactInfoBox p{
+  margin:14px 0 !important;
+  line-height:1.9 !important;
+}
+
+.highlightContact a{
+  font-size:34px !important;
+}
+
+.wideContact{
+  padding-top:28px !important;
+}
+
+@media(max-width:900px){
+  nav a{
+    font-size:13px !important;
+  }
+}
+
+
+/* AGRO-MAR v22 — osobna podstrona dla producenta rolnego */
+.producerPage{background:#f5efe3;min-height:100vh}
+.producerHeroPage{padding:86px clamp(18px,5vw,82px);text-align:center;color:white;background:linear-gradient(135deg,rgba(4,30,22,.84),rgba(18,63,48,.78)),url('/images/jablka.jpg');background-size:cover;background-position:center}
+.producerHeroPage h1{max-width:1050px;margin:0 auto 22px;font-family:"Cormorant Garamond",serif;font-size:clamp(42px,6vw,76px);line-height:1;color:#fff3c1}
+.producerHeroPage p:not(.label){max-width:880px;margin:0 auto;font-size:20px;line-height:1.75;color:#f5ead0;font-weight:600}
+.producerPinned{padding:58px clamp(18px,5vw,82px)}
+.producerPinned h2{margin:0 auto 28px;max-width:1180px;font-family:"Cormorant Garamond",serif;font-size:clamp(34px,4vw,54px);color:var(--bottle)}
+.producerPostsGrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.producerPostCard{background:#fffaf0;border:1px solid rgba(216,189,105,.34);border-radius:32px;overflow:hidden;box-shadow:0 24px 70px rgba(4,30,22,.10)}
+.producerPostCard img{width:100%;height:auto;display:block;object-fit:contain;background:#f7f4ec}
+.producerPostBody{padding:28px}
+.producerCategory{display:inline-flex;margin-bottom:12px;padding:8px 14px;border-radius:999px;background:#0b3024;color:#fff3c1;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.producerPostCard h3{margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1.05;color:var(--bottle)}
+.producerPostCard p{color:#3d4b42;line-height:1.75;font-weight:600}
+.producerFile{display:inline-flex;margin-top:14px;padding:13px 18px;border-radius:999px;background:var(--bottle);color:#fff3c1;font-weight:900}
+@media(max-width:820px){.producerPostsGrid{grid-template-columns:1fr}.producerHeroPage{padding:60px 18px}}
+
+/* v22 — galeria bez ucinania zdjęć */
+.gallery img,.producerPostCard img{width:100%!important;height:auto!important;object-fit:contain!important}
+.galleryItem{background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;background-color:#f7f4ec!important;min-height:260px!important}
+nav a{font-size:16px!important;font-weight:900!important;letter-spacing:.05em!important;text-transform:uppercase!important}
+@media(max-width:1100px){nav a{font-size:13px!important}}
+
+
+/* AGRO-MAR v23 — poprawka podstrony producentów i galerii */
+.producerPage{background:#f5efe3;min-height:100vh}
+.producerHeroPage{padding:86px clamp(18px,5vw,82px);text-align:center;color:white;background:linear-gradient(135deg,rgba(4,30,22,.84),rgba(18,63,48,.78)),url('/images/jablka.jpg');background-size:cover;background-position:center}
+.producerHeroPage h1{max-width:1050px;margin:0 auto 22px;font-family:"Cormorant Garamond",serif;font-size:clamp(42px,6vw,76px);line-height:1;color:#fff3c1}
+.producerHeroPage p:not(.label){max-width:880px;margin:0 auto;font-size:20px;line-height:1.75;color:#f5ead0;font-weight:600}
+.producerPinned{padding:58px clamp(18px,5vw,82px)}
+.producerPinned h2{margin:0 auto 28px;max-width:1180px;font-family:"Cormorant Garamond",serif;font-size:clamp(34px,4vw,54px);color:var(--bottle)}
+.producerPostsGrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.producerPostCard{background:#fffaf0;border:1px solid rgba(216,189,105,.34);border-radius:32px;overflow:hidden;box-shadow:0 24px 70px rgba(4,30,22,.10)}
+.producerPostCard img{width:100%;height:auto;display:block;object-fit:contain;background:#f7f4ec}
+.producerPostBody{padding:28px}
+.producerCategory{display:inline-flex;margin-bottom:12px;padding:8px 14px;border-radius:999px;background:#0b3024;color:#fff3c1;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.producerPostCard h3{margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1.05;color:var(--bottle)}
+.producerPostCard p{color:#3d4b42;line-height:1.75;font-weight:600}
+.producerFile{display:inline-flex;margin-top:14px;padding:13px 18px;border-radius:999px;background:var(--bottle);color:#fff3c1;font-weight:900}
+.galleryItem{background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;background-color:#f7f4ec!important;min-height:260px!important}
+@media(max-width:820px){.producerPostsGrid{grid-template-columns:1fr}.producerHeroPage{padding:60px 18px}}
