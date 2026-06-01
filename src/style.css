@@ -865,3 +865,239 @@ nav a{font-size:16px!important;font-weight:900!important;letter-spacing:.05em!im
 .producerFile{display:inline-flex;margin-top:14px;padding:13px 18px;border-radius:999px;background:var(--bottle);color:#fff3c1;font-weight:900}
 .galleryItem{background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;background-color:#f7f4ec!important;min-height:260px!important}
 @media(max-width:820px){.producerPostsGrid{grid-template-columns:1fr}.producerHeroPage{padding:60px 18px}}
+
+
+/* =========================================================
+   AGRO-MAR v24 — elegancka galeria + czytelny panel admina
+   ========================================================= */
+
+/* GALERIA — likwidacja szarych pól i bardziej premium wygląd */
+.gallery,
+.gallerySection,
+.section.gallery{
+  background:linear-gradient(180deg,#f8f1df 0%,#efe4c8 100%) !important;
+}
+
+.galleryGrid,
+.photoGrid,
+.cardsGrid{
+  gap:30px !important;
+  align-items:stretch !important;
+}
+
+.galleryItem,
+.galleryCard,
+.photoCard,
+.fruitPhotoCard,
+.imageCard,
+.cardImage,
+.sectionImage,
+.transportPhoto{
+  position:relative !important;
+  overflow:hidden !important;
+  min-height:330px !important;
+  border-radius:32px !important;
+  background:#09271e !important;
+  border:1px solid rgba(216,189,105,.38) !important;
+  box-shadow:0 24px 70px rgba(4,30,22,.18) !important;
+}
+
+/* Jeżeli zdjęcie jest jako img */
+.gallery img,
+.galleryCard img,
+.photoCard img,
+.fruitPhotoCard img,
+.imageCard img,
+.cardImage img,
+.sectionImage img,
+.transportPhoto img,
+.cards img{
+  width:100% !important;
+  height:100% !important;
+  min-height:330px !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  display:block !important;
+  background:#09271e !important;
+  transition:transform .45s ease, filter .45s ease !important;
+}
+
+/* Jeżeli zdjęcie jest jako background-image */
+.galleryItem,
+.galleryCard,
+.photoCard,
+.fruitPhotoCard,
+.imageCard,
+.cardImage,
+.sectionImage,
+.transportPhoto,
+div[style*="background-image"]{
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  background-color:#09271e !important;
+}
+
+.galleryItem:hover img,
+.galleryCard:hover img,
+.photoCard:hover img,
+.fruitPhotoCard:hover img{
+  transform:scale(1.035) !important;
+  filter:saturate(1.08) contrast(1.04) !important;
+}
+
+/* Ciemna poświata na dole zdjęć, żeby podpis nie był przypadkowy */
+.galleryItem::after,
+.galleryCard::after,
+.photoCard::after,
+.fruitPhotoCard::after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  height:45% !important;
+  pointer-events:none !important;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(4,30,22,.56)) !important;
+}
+
+/* Podpisy zdjęć mniej nachalne i bardziej eleganckie */
+.galleryItem h3,
+.galleryCard h3,
+.photoCard h3,
+.fruitPhotoCard h3,
+.cardTitle{
+  position:absolute !important;
+  left:22px !important;
+  bottom:22px !important;
+  z-index:3 !important;
+  margin:0 !important;
+  padding:10px 18px !important;
+  border-radius:999px !important;
+  background:rgba(255,246,220,.92) !important;
+  color:#08291f !important;
+  font-size:17px !important;
+  font-weight:900 !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.20) !important;
+}
+
+/* Jeśli jako tytuł wpiszesz kropkę, ukrywamy ją wizualnie */
+.galleryItem h3:empty,
+.galleryCard h3:empty,
+.photoCard h3:empty,
+.fruitPhotoCard h3:empty{
+  display:none !important;
+}
+
+/* Układ galerii */
+.galleryGrid,
+.photoGrid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+
+@media(max-width:1100px){
+  .galleryGrid,
+  .photoGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:720px){
+  .galleryGrid,
+  .photoGrid{
+    grid-template-columns:1fr !important;
+  }
+
+  .galleryItem,
+  .galleryCard,
+  .photoCard,
+  .fruitPhotoCard,
+  .imageCard,
+  .cardImage,
+  .sectionImage,
+  .transportPhoto,
+  .gallery img,
+  .galleryCard img,
+  .photoCard img,
+  .fruitPhotoCard img{
+    min-height:260px !important;
+  }
+}
+
+/* PANEL ADMINA — przyciski dużo bardziej widoczne */
+.admin button,
+.adminPanel button,
+.adminPage button,
+button{
+  font-weight:900 !important;
+}
+
+.admin button,
+.adminPanel button,
+.adminPage button{
+  border:none !important;
+  border-radius:999px !important;
+  padding:13px 22px !important;
+  cursor:pointer !important;
+  box-shadow:0 12px 28px rgba(4,30,22,.12) !important;
+}
+
+/* Zapisz */
+.admin button:not(.deleteBtn),
+.adminPanel button:not(.deleteBtn),
+.adminPage button:not(.deleteBtn){
+  background:#0b3024 !important;
+  color:#fff3c1 !important;
+}
+
+/* Usuń — także gdy klasa nie istnieje, łapiemy drugi przycisk przy rekordzie */
+.admin button:nth-of-type(2),
+.adminPanel button:nth-of-type(2),
+.adminPage button:nth-of-type(2){
+  background:#a72b2b !important;
+  color:#fff !important;
+}
+
+/* Dodaj */
+.admin .addBtn,
+.adminPanel .addBtn,
+.adminPage .addBtn{
+  background:#c99a2e !important;
+  color:#10271f !important;
+}
+
+/* Pola admina czytelniejsze */
+.admin input,
+.admin textarea,
+.admin select,
+.adminPanel input,
+.adminPanel textarea,
+.adminPanel select,
+.adminPage input,
+.adminPage textarea,
+.adminPage select{
+  border:1px solid rgba(11,48,36,.24) !important;
+  background:#fffaf0 !important;
+  color:#10271f !important;
+  border-radius:14px !important;
+  padding:12px 14px !important;
+  font-weight:700 !important;
+}
+
+.admin label,
+.adminPanel label,
+.adminPage label{
+  color:#10271f !important;
+  font-weight:900 !important;
+  letter-spacing:.04em !important;
+}
+
+/* Dodatkowe wygładzenie strony producentów */
+.producerPostCard img{
+  background:#09271e !important;
+  width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
