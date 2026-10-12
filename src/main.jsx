@@ -83,6 +83,8 @@ function App(){
  const vSections=visible(sections);
  const sec=(slug)=>vSections.find(s=>s.slug===slug)||fallbackSections.find(s=>s.slug===slug);
 
+ if(window.location.pathname.includes("/wyciek-danych-rodo")) return <main className={"theme-" + (settings.theme || "bottle")}><Header sections={vSections}/><RodoNotice/><Footer settings={settings}/></main>;
+
  if(window.location.pathname.includes("/producenci")) return <main className={"theme-" + (settings.theme || "bottle")}><Header sections={vSections}/><ProducersPage posts={visible(producerPosts)} settings={settings}/><Footer settings={settings}/></main>;
 
  return <main className={"theme-" + (settings.theme || "bottle")}>
@@ -100,7 +102,22 @@ function App(){
  </main>
 }
 
-function Header({sections}){return <header className="header"><a className="brand" href="/#start"><img src="/images/logo-jablko.png" alt="AGRO-MAR logo"/><span><strong>AGRO-MAR</strong><small>Mariusz Bańka Sp. z o.o.</small></span></a><nav><a href="/#start">Strona główna</a>{sections.map(s=><a key={s.slug} href={s.slug==="producent"?"/producenci":"/#"+s.slug}>{s.menu_label}</a>)}<a href="/#galeria">Galeria</a><a href="/admin" className="adminLink">Admin</a></nav></header>}
+function Header({sections}){return <header className="header"><a className="brand" href="/#start"><img src="/images/logo-jablko.png" alt="AGRO-MAR logo"/><span><strong>AGRO-MAR</strong><small>Mariusz Bańka Sp. z o.o.</small></span></a><nav><a href="/#start">Strona główna</a>{sections.map(s=><a key={s.slug} href={s.slug==="producent"?"/producenci":"/#"+s.slug}>{s.menu_label}</a>)}<a href="/#galeria">Galeria</a><a href="/wyciek-danych-rodo">Wyciek danych RODO</a><a href="/admin" className="adminLink">Admin</a></nav></header>}
+
+function RodoNotice(){return <section className="rodoPage">
+ <div className="rodoPanel">
+  <p className="label goldLabel">Informacja dla kontrahentów</p>
+  <h1>Wyciek danych RODO</h1>
+  <div className="rodoCopy">
+   <p>Szanowni Państwo,</p>
+   <p>w związku z wyciekiem danych w systemie fakturowym: Fakturownia, która obsługuje ponad 600 000 przedsiębiorców, w tym naszą firmę, prosimy o zapoznanie się z umieszczoną informacją.</p>
+   <p className="rodoWarning">Zalecamy zastrzeżenie nr PESEL</p>
+   <p>Pozdrawiamy,<br/><strong>AGRO-MAR Mariusz Bańka Sp. z o.o.</strong></p>
+  </div>
+  <a href="/images/komunikat-rodo.jpg" target="_blank" rel="noreferrer" className="rodoImageLink" title="Otwórz komunikat w pełnym rozmiarze"><img src="/images/komunikat-rodo.jpg" alt="Informacja o naruszeniu ochrony danych osobowych – pełny komunikat AGRO-MAR" loading="lazy"/></a>
+  <p className="rodoHint">Kliknij zdjęcie, aby otworzyć komunikat w pełnym rozmiarze.</p>
+ </div>
+ </section>}
 
 function Hero({settings}){const lines=(settings.hero_lines||"").split("|").filter(Boolean);return <section id="start" className="hero"><div className="heroImage fruitHero" style={{backgroundImage:`linear-gradient(90deg,rgba(4,30,22,.04),rgba(4,30,22,.76)),url('${settings.hero_fruit_image}')`}}></div><div className="heroImage truckHero" style={{backgroundImage:`linear-gradient(90deg,rgba(4,30,22,.78),rgba(4,30,22,.03)),url('${settings.hero_truck_image}')`}}></div><div className="heroOverlay"></div><div className="heroContent"><div className="heroLogo"><img src="/images/logo-jablko.png" alt=""/></div><h1>{settings.hero_title}</h1><p className="company">{settings.hero_subtitle}</p><div className="goldOrnament"><span></span><b>◆</b><span></span></div><h2>{lines.map((l,i)=><React.Fragment key={l}>{l}{i<lines.length-1&&<br/>}</React.Fragment>)}</h2><p className="lead">{settings.hero_description}</p></div></section>}
 

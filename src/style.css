@@ -1304,3 +1304,7 @@ button{
   font-weight:700 !important;
 }
 
+
+/* Informacja o naruszeniu ochrony danych */
+.rodoPage{min-height:75vh;padding:115px 18px 65px;background:linear-gradient(135deg,#0a241c,#173e31);color:#fff}
+.rodoPanel{max-width:900px;margin:0 auto}.rodoPanel h1{color:#e8c675;font-size:clamp(30px,5vw,54px);margin:14px 0 30px}.rodoCopy{background:#fff;color:#202820;border-radius:12px;padding:clamp(22px,4vw,44px);line-height:1.8;font-size:clamp(16px,2vw,19px);margin-bottom:28px}.rodoCopy p{margin:0 0 18px}.rodoCopy p:last-child{margin-bottom:0}.rodoWarning{font-weight:800;color:#ad1c1c;font-size:1.15em}.rodoImageLink{display:block;background:#fff;padding:clamp(8px,2vw,18px);border-radius:12px;text-align:center}.rodoImageLink img{display:block;width:100%;height:auto;max-width:100%;margin:auto}.rodoHint{text-align:center;font-size:14px;color:#f0e5c5;margin-top:14px}
